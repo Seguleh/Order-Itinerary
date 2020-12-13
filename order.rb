@@ -19,26 +19,30 @@ end
 
 # Save origin
 ori = find_it(origs, dests)
-
 # exit if there is no origin
 if ori == "There is none"
     exit
 end
 
-# Get origin ticket
+# Get origin ticket and we have a new array to fill with order
 s = tks.select{|x| x[0] == ori}
-
 # Lets remove the origin from the unordered list since we already found it and its in our hand ;)
 tks.delete(s[0])
 
-# Lets go through the unordered tickets until there is none
-i = 0
-until tks.empty? do
-    f = tks.select{|x| x[0] == s[i][1]}
-    s.push(f[0])
-    tks.delete(f[0])
-    i += 1
+# Ordering time!
+def order_flights(o, uo)
+    i = 0
+    # Lets go through the unordered tickets until there is none
+    until uo.empty? do
+        f = uo.select{|x| x[0] == o[i][1]}
+        o.push(f[0])
+        uo.delete(f[0])
+        i += 1
+    end
+    # Return in a nice format to print
+    return o.inspect
 end
 
-puts "Flight itinerary:"
-puts s.inspect
+
+puts "Trip itinerary:"
+puts order_flights(s, tks)
