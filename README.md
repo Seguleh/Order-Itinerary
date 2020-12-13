@@ -1,2 +1,9 @@
 # Order-Itinerary
-Code to order and unordered list of tickets with origin and destination
+Code to order an unordered list of tickets with origin and destination (array)
+
+We assume:
+
+ - no loops
+ - always an origin and destination
+ 
+Its just a bunch of tickets that were dropped in the floor and now are all jumbled D:
