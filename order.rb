@@ -31,13 +31,11 @@ tks.delete(s[0])
 
 # Ordering time!
 def order_flights(o, uo)
-    i = 0
     # Lets go through the unordered tickets until there is none
     until uo.empty? do
-        f = uo.select{|x| x[0] == o[i][1]}
+        f = uo.select{|x| x[0] == o.last[1]}
         o.push(f[0])
         uo.delete(f[0])
-        i += 1
     end
     # Return in a nice format to print
     return o.inspect
