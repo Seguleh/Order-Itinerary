@@ -7,7 +7,7 @@ puts tks.inspect
 origs = tks.map{|x| x[0]}
 dests = tks.map{|x| x[1]}
 
-# Was named "find_origin" but starting it realized the order would determine if you either want origin or destination so made a resuable function to find "it"
+# The order will determine if you either want origin or destination so its now resuable function to find "it"
 def find_it(a, b)
     a.each do |x|
         if(!(b.include?(x)))
