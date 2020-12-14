@@ -1,4 +1,4 @@
-# Order-Itinerary
+# Order Itinerary
 Code to order an unordered list of tickets with origin and destination (array)
 
 We assume:
